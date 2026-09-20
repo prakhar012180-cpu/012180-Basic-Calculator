@@ -1,163 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Calculator in C - README</title>
-    <style>
-        :root {
-            --bg-color: #0d1117;
-            --text-color: #c9d1d9;
-            --border-color: #30363d;
-            --code-bg: #161b22;
-            --accent-color: #58a6ff;
-            --header-border: #21262d;
-        }
+<div align="center">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            max-width: 880px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
+  <h1>🧮 B.Tech Lab: Basic Calculator</h1>
+  <p><strong>A simple, robust command-line calculator written in C for fundamental arithmetic operations.</strong></p>
 
-        h1 {
-            font-size: 2rem;
-            border-bottom: 1px solid var(--header-border);
-            padding-bottom: 0.3em;
-            color: #f0f6fc;
-        }
+  <p>
+    <img src="https://img.shields.io/badge/Language-C-blue.svg" alt="Language C" />
+    <img src="https://img.shields.io/badge/Compiler-GCC-green.svg" alt="Compiler GCC" />
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License MIT" />
+  </p>
 
-        h2 {
-            font-size: 1.5rem;
-            border-bottom: 1px solid var(--header-border);
-            padding-bottom: 0.3em;
-            margin-top: 1.5rem;
-            color: #f0f6fc;
-        }
+</div>
 
-        h3 {
-            font-size: 1.25rem;
-            margin-top: 1rem;
-        }
+<hr />
 
-        p {
-            margin-top: 0;
-            margin-bottom: 16px;
-        }
+## 🚀 Overview
 
-        ul, ol {
-            padding-left: 2em;
-            margin-bottom: 16px;
-        }
+This repository contains a C program created for B.Tech laboratory assignments. It takes two float numbers and an operator from the user, then processes the calculation using a `switch-case` control structure.
 
-        li {
-            margin-bottom: 0.25em;
-        }
+---
 
-        code {
-            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-            background-color: rgba(110, 118, 129, 0.4);
-            padding: 0.2em 0.4em;
-            border-radius: 6px;
-            font-size: 85%;
-        }
+## ✨ Features
 
-        pre {
-            background-color: var(--code-bg);
-            border-radius: 6px;
-            padding: 16px;
-            overflow: auto;
-            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-            font-size: 85%;
-            line-height: 1.45;
-            border: 1px solid var(--border-color);
-        }
+<table>
+  <tr>
+    <td width="50%">
+      <h3>➕ Core Arithmetic</h3>
+      <ul>
+        <li><strong>Addition (<code>+</code>)</strong></li>
+        <li><strong>Subtraction (<code>-</code>)</strong></li>
+        <li><strong>Multiplication (<code>*</code>)</strong></li>
+        <li><strong>Division (<code>/</code>)</strong></li>
+      </ul>
+    </td>
+    <td width="50%">
+      <h3>🛡️ Built-in Safeguards</h3>
+      <ul>
+        <li><strong>Zero Division Prevention:</strong> Displays error message if second number is zero.</li>
+        <li><strong>Input Validation:</strong> Handles unknown operator inputs gracefully.</li>
+        <li><strong>Clean Formatting:</strong> Displays results rounded to 2 decimal places.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-        pre code {
-            background-color: transparent;
-            padding: 0;
-            border-radius: 0;
-            font-size: 100%;
-        }
+---
 
-        hr {
-            height: 0.25em;
-            padding: 0;
-            margin: 24px 0;
-            background-color: var(--border-color);
-            border: 0;
-        }
+## 💻 Code Snippet
 
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
+```c
+#include <stdio.h>
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
+int main() {
+    float num1, num2, result;
+    char op;
 
-    <h1>Basic Calculator in C</h1>
-    <p>A simple CLI-based calculator program written in C as part of the B.Tech programming laboratory course. It performs basic arithmetic operations based on user input.</p>
+    printf("=========================================\n");
+    printf("        B.TECH LAB: BASIC CALCULATOR     \n");
+    printf("=========================================\n\n");
 
-    <hr>
+    printf("Enter first number: ");
+    scanf("%f", &num1);
 
-    <h2>Features</h2>
-    <ul>
-        <li><strong>Supported Operations:</strong> Addition (<code>+</code>), Subtraction (<code>-</code>), Multiplication (<code>*</code>), and Division (<code>/</code>).</li>
-        <li><strong>Precision Output:</strong> Formats float results to 2 decimal places.</li>
-        <li><strong>Error Handling:</strong>
-            <ul>
-                <li>Prevents division by zero with a clear warning message.</li>
-                <li>Handles invalid operator inputs gracefully.</li>
-            </ul>
-        </li>
-    </ul>
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &op); // Note the space before %c to catch leftover newline
 
-    <hr>
+    printf("Enter second number: ");
+    scanf("%f", &num2);
 
-    <h2>How to Run</h2>
+    printf("\n-----------------------------------------\n");
 
-    <h3>Prerequisites</h3>
-    <p>Make sure you have a C compiler (like <code>gcc</code>) installed on your system.</p>
+    switch (op) {
+        case '+':
+            result = num1 + num2;
+            printf("Result: %.2f + %.2f = %.2f\n", num1, num2, result);
+            break;
+        case '-':
+            result = num1 - num2;
+            printf("Result: %.2f - %.2f = %.2f\n", num1, num2, result);
+            break;
+        case '*':
+            result = num1 * num2;
+            printf("Result: %.2f * %.2f = %.2f\n", num1, num2, result);
+            break;
+        case '/':
+            if (num2 != 0) {
+                result = num1 / num2;
+                printf("Result: %.2f / %.2f = %.2f\n", num1, num2, result);
+            } else {
+                printf("Error: Division by zero is not allowed!\n");
+            }
+            break;
+        default:
+            printf("Error: Invalid operator entered.\n");
+    }
 
-    <h3>Steps</h3>
-    <ol>
-        <li>
-            <strong>Clone the repository:</strong>
-            <pre><code>git clone https://github.com/your-username/repository-name.git
-cd repository-name</code></pre>
-        </li>
-        <li>
-            <strong>Compile the code:</strong>
-            <pre><code>gcc calculator.c -o calculator</code></pre>
-        </li>
-        <li>
-            <strong>Run the program:</strong>
-            <ul>
-                <li>
-                    On Linux/macOS:
-                    <pre><code>./calculator</code></pre>
-                </li>
-                <li>
-                    On Windows:
-                    <pre><code>calculator.exe</code></pre>
-                </li>
-            </ul>
-        </li>
-    </ol>
+    printf("-----------------------------------------\n");
+    return 0;
+}
 
-    <hr>
 
-    <h2>Sample Usage</h2>
-    <pre><code>=========================================
+🛠️ How to Build and Run
+Prerequisites
+A C compiler such as GCC or Clang.
+
+Steps
+Clone the repository:
+
+
+git clone [https://github.com/your-username/repository-name.git](https://github.com/your-username/repository-name.git)
+cd repository-name
+
+gcc calculator.c -o calculator
+
+# On Linux/macOS
+./calculator
+
+# On Windows
+calculator.exe
+
+
+=========================================
         B.TECH LAB: BASIC CALCULATOR     
 =========================================
 
@@ -167,16 +129,4 @@ Enter second number: 4
 
 -----------------------------------------
 Result: 12.50 * 4.00 = 50.00
------------------------------------------</code></pre>
-
-    <hr>
-
-    <h2>Code Overview</h2>
-    <ul>
-        <li><code>scanf(" %c", &amp;op)</code>: Uses a leading space in the format string to bypass any leftover newline characters from prior input.</li>
-        <li><code>switch(op)</code>: Handles operation selection efficiently.</li>
-        <li><code>if (num2 != 0)</code>: Checks for zero division before attempting division operations.</li>
-    </ul>
-
-</body>
-</html>
+-----------------------------------------
