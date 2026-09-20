@@ -99,6 +99,9 @@ int main() {
 }
 
 
+
+
+
 🛠️ How to Build and Run
 Prerequisites
 A C compiler such as GCC or Clang.
@@ -117,6 +120,8 @@ gcc calculator.c -o calculator
 
 # On Windows
 calculator.exe
+
+
 
 
 =========================================
