@@ -6,7 +6,6 @@
     <b>A lightweight, CLI-based calculator program written in C for standard arithmetic operations with input validation.</b>
   </p>
 
-  <!-- Badges -->
   <p>
     <img src="https://img.shields.io/badge/Language-C-blue.svg?style=for-the-badge&logo=c" alt="Language C" />
     <img src="https://img.shields.io/badge/Compiler-GCC-green.svg?style=for-the-badge&logo=gnu" alt="Compiler GCC" />
@@ -17,42 +16,71 @@
 
 </div>
 
-## 📌 Overview
+<h2>📌 Overview</h2>
 
-This project is a simple command-line calculator developed as part of the **B.Tech Programming in C Laboratory**. It accepts two floating-point numbers and a mathematical operator from the user, executes the requested calculation, and displays the result formatted to two decimal places.
+<p>This project is a simple command-line calculator developed as part of the <b>B.Tech Programming in C Laboratory</b>. It accepts two floating-point numbers and a mathematical operator from the user, executes the requested calculation, and displays the result formatted to two decimal places.</p>
 
----
+<hr />
 
-## ✨ Features
+<h2>✨ Features</h2>
 
-- ➕ **Addition (`+`)**: Adds two floating-point numbers.
-- ➖ **Subtraction (`-`)**: Subtracts the second number from the first.
-- ✖️ **Multiplication (`*`)**: Multiplies two numbers.
-- ➗ **Division (`/`)**: Divides the first number by the second.
-- 🛡️ **Error Handling**:
-  - Prevents **division-by-zero** runtime errors with clear feedback.
-  - Rejects **invalid operators** gracefully.
-- ⚡ **Buffer Handling**: Uses whitespace-padded `%c` specifier in `scanf` to handle leftover newline characters seamlessly.
+<ul>
+  <li><b>Addition (<code>+</code>):</b> Adds two floating-point numbers.</li>
+  <li><b>Subtraction (<code>-</code>):</b> Subtracts the second number from the first.</li>
+  <li><b>Multiplication (<code>*</code>):</b> Multiplies two numbers.</li>
+  <li><b>Division (<code>/</code>):</b> Divides the first number by the second.</li>
+  <li><b>Error Handling:</b>
+    <ul>
+      <li>Prevents <b>division-by-zero</b> runtime errors with clear feedback.</li>
+      <li>Rejects <b>invalid operators</b> gracefully.</li>
+    </ul>
+  </li>
+  <li><b>Buffer Handling:</b> Uses whitespace-padded <code>%c</code> specifier in <code>scanf</code> to handle leftover newline characters seamlessly.</li>
+</ul>
 
----
+<hr />
 
-## 🛠️ Supported Operations
+<h2>🛠️ Supported Operations</h2>
 
-| Operator | Action | Example Output |
-| :---: | :--- | :--- |
-| **`+`** | Addition | `12.50 + 4.00 = 16.50` |
-| **`-`** | Subtraction | `12.50 - 4.00 = 8.50` |
-| **`*`** | Multiplication | `12.50 * 4.00 = 50.00` |
-| **`/`** | Division | `12.50 / 4.00 = 3.12` |
+<table width="100%">
+  <thead>
+    <tr>
+      <th align="center">Operator</th>
+      <th align="left">Action</th>
+      <th align="left">Example Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><code>+</code></td>
+      <td>Addition</td>
+      <td><code>12.50 + 4.00 = 16.50</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>-</code></td>
+      <td>Subtraction</td>
+      <td><code>12.50 - 4.00 = 8.50</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>*</code></td>
+      <td>Multiplication</td>
+      <td><code>12.50 * 4.00 = 50.00</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>/</code></td>
+      <td>Division</td>
+      <td><code>12.50 / 4.00 = 3.12</code></td>
+    </tr>
+  </tbody>
+</table>
 
----
+<hr />
 
-## 📄 Code Snippet
+<h2>📄 Code Snippet</h2>
 
-Below is the complete C implementation for the project:
+<p>Below is the complete C implementation for the project:</p>
 
-```c
-#include <stdio.h>
+<pre><code>#include &lt;stdio.h&gt;
 
 int main() {
     float num1, num2, result;
@@ -63,13 +91,13 @@ int main() {
     printf("=========================================\n\n");
 
     printf("Enter first number: ");
-    scanf("%f", &num1);
+    scanf("%f", &amp;num1);
 
     printf("Enter an operator (+, -, *, /): ");
-    scanf(" %c", &op); // Space before %c catches leftover newline
+    scanf(" %c", &amp;op); // Space before %c catches leftover newline
 
     printf("Enter second number: ");
-    scanf("%f", &num2);
+    scanf("%f", &amp;num2);
 
     printf("\n-----------------------------------------\n");
 
@@ -100,39 +128,45 @@ int main() {
 
     printf("-----------------------------------------\n");
     return 0;
-}
-🚀 Getting Started
-Prerequisites
-Ensure you have a C compiler installed on your system:
+}</code></pre>
 
-GCC (Linux / macOS / Windows via MinGW)
+<hr />
 
-Clang (macOS / Linux)
+<h2>🚀 Getting Started</h2>
 
-📥 Compilation & Execution
-Clone the Repository
+<h3>Prerequisites</h3>
+<p>Ensure you have a C compiler installed on your system:</p>
+<ul>
+  <li><b>GCC</b> (Linux / macOS / Windows via MinGW)</li>
+  <li><b>Clang</b> (macOS / Linux)</li>
+</ul>
 
-Bash
-git clone [https://github.com/your-username/btech-c-calculator.git](https://github.com/your-username/btech-c-calculator.git)
-cd btech-c-calculator
-Compile the C Program
+<h3>📥 Compilation &amp; Execution</h3>
 
-Bash
-gcc main.c -o calculator
-Run the Binary
+<ol>
+  <li>
+    <b>Clone the Repository</b>
+    <pre><code>git clone https://github.com/your-username/btech-c-calculator.git
+cd btech-c-calculator</code></pre>
+  </li>
+  <li>
+    <b>Compile the C Program</b>
+    <pre><code>gcc main.c -o calculator</code></pre>
+  </li>
+  <li>
+    <b>Run the Binary</b>
+    <p>On Linux / macOS:</p>
+    <pre><code>./calculator</code></pre>
+    <p>On Windows:</p>
+    <pre><code>calculator.exe</code></pre>
+  </li>
+</ol>
 
-On Linux / macOS:
+<hr />
 
-Bash
-./calculator
-On Windows:
+<h2>💻 Output Example</h2>
 
-DOS
-calculator.exe
-
-💻 Output Example
-
-=========================================
+<pre><code>=========================================
         B.TECH LAB: BASIC CALCULATOR     
 =========================================
 
@@ -142,9 +176,18 @@ Enter second number: 4
 
 -----------------------------------------
 Result: 12.50 * 4.00 = 50.00
------------------------------------------
-📁 Repository Structure
-Plaintext
-.
+-----------------------------------------</code></pre>
+
+<hr />
+
+<h2>📁 Repository Structure</h2>
+
+<pre><code>.
 ├── main.c        # Source code for the calculator
-└── README.md     # Project documentation
+└── README.md     # Project documentation</code></pre>
+
+<hr />
+
+<div align="center">
+  <p><sub>Built for B.Tech Computer Science &amp; Engineering • Licensed under MIT</sub></p>
+</div>
