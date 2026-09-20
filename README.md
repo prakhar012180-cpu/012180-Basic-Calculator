@@ -129,8 +129,9 @@ On Windows:
 
 DOS
 calculator.exe
+
 💻 Output Example
-Plaintext
+
 =========================================
         B.TECH LAB: BASIC CALCULATOR     
 =========================================
